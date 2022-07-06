@@ -37,7 +37,7 @@ const config = {
        // Plugin Options for loading OpenAPI files
        specs: [
          {
-           spec: 'https://les-projects.b-cdn.net/MCSS/openapi.json',
+           spec: 'static/openapi.json',
            route: '/api/',
          },
        ],

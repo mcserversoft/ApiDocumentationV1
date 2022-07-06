@@ -1,0 +1,276 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "MCSS API",
+      "description": "Routes for MCSS's V13 API",
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "https://192.168.1.100:2096"
+      }
+    ],
+    "paths": {
+      "/api/v1/servers/:serverid/icon": {
+        "get": {
+          "description": "Get a server's icon",
+          "parameters": [
+            {
+              "name": "apiKey",
+              "in": "header",
+              "required": false,
+              "style": "simple",
+              "explode": false,
+              "schema": {
+                "type": "string"
+              },
+              "example": "qqZJUOun01SsX9723CDG13JqJK3O1BzUewP09vlqoaSWDroGAPJzex8QTM5pbnyn9NUZoOsJlPsV0DdG5aDnywUoVlWIHvSRcMv90Rwoe3YbRl5xmzjFCpfw"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Some cool json here"
+            },
+            "404": {
+              "description": "Server not found"
+            }
+          },
+          "servers": [
+            {
+              "url": "https://192.168.1.100:2096"
+            }
+          ]
+        },
+        "servers": [
+          {
+            "url": "https://192.168.1.100:2096"
+          }
+        ]
+      },
+      "/api/v1": {
+        "get": {
+          "description": "Get the API's version",
+          "parameters": [
+            {
+              "name": "apiKey",
+              "in": "header",
+              "required": false,
+              "style": "simple",
+              "explode": false,
+              "schema": {
+                "type": "string"
+              },
+              "example": "qqZJUOun01SsX9723CDG13JqJK3O1BzUewP09vlqoaSWDroGAPJzex8QTM5pbnyn9NUZoOsJlPsV0DdG5aDnywUoVlWIHvSRcMv90Rwoe3YbRl5xmzjFCpfw"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Auto generated using Swagger Inspector",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/inline_response_200"
+                  },
+                  "examples": {
+                    "0": {
+                      "value": "{\"isDevBuild\":true,\"mcssVersion\":\"13.0.0 dev-040722.0\",\"mcssApiVersion\":\"1.0.0\",\"uniqueIdentifier\":\"0ab61348-778f-4487-a319-86b1c32dadac\",\"youAreAwesome\":true}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "servers": [
+            {
+              "url": "https://192.168.1.100:2096"
+            }
+          ]
+        },
+        "servers": [
+          {
+            "url": "https://192.168.1.100:2096"
+          }
+        ]
+      },
+      "/api/v1/servers/3054aac3-dbf5-4e10-94d2-f4b83577d9b4/stats": {
+        "get": {
+          "description": "Get a server's stats",
+          "parameters": [
+            {
+              "name": "apiKey",
+              "in": "header",
+              "required": false,
+              "style": "simple",
+              "explode": false,
+              "schema": {
+                "type": "string"
+              },
+              "example": "qqZJUOun01SsX9723CDG13JqJK3O1BzUewP09vlqoaSWDroGAPJzex8QTM5pbnyn9NUZoOsJlPsV0DdG5aDnywUoVlWIHvSRcMv90Rwoe3YbRl5xmzjFCpfw"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Auto generated using Swagger Inspector",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/inline_response_200_1"
+                  },
+                  "examples": {
+                    "0": {
+                      "value": "{\"latest\":{\"cpu\":0,\"memoryUsed\":0,\"memoryLimit\":2048,\"playersOnline\":0,\"playerLimit\":20,\"startDate\":0}}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "servers": [
+            {
+              "url": "https://192.168.1.100:2096"
+            }
+          ]
+        },
+        "servers": [
+          {
+            "url": "https://192.168.1.100:2096"
+          }
+        ]
+      },
+      "/api/v1/servers/3054aac3-dbf5-4e10-94d2-f4b83577d9b4": {
+        "get": {
+          "description": "Get a server's information",
+          "parameters": [
+            {
+              "name": "apiKey",
+              "in": "header",
+              "required": false,
+              "style": "simple",
+              "explode": false,
+              "schema": {
+                "type": "string"
+              },
+              "example": "qqZJUOun01SsX9723CDG13JqJK3O1BzUewP09vlqoaSWDroGAPJzex8QTM5pbnyn9NUZoOsJlPsV0DdG5aDnywUoVlWIHvSRcMv90Rwoe3YbRl5xmzjFCpfw"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Auto generated using Swagger Inspector",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/inline_response_200_2"
+                  },
+                  "examples": {
+                    "0": {
+                      "value": "{\"guid\":\"3054aac3-dbf5-4e10-94d2-f4b83577d9b4\",\"status\":0,\"name\":\"New Molten\",\"description\":\"spigot-1.8-R0.1-SNAPSHOT-latest\",\"pathToFolder\":\"P:\\\\projects\\\\MC Server Soft\\\\dev\\\\_debug\\\\servers\\\\New Molten\\\\\",\"folderName\":\"New Molten\",\"creationDate\":\"2022-05-13T10:29:27.1703546+02:00\",\"isSetToAutoStart\":false,\"keepOnline\":0,\"javaAllocatedMemory\":2048,\"javaStartupLine\":\"java -Xms256M -Xmx[RAM]M -jar spigot-1.8-R0.1-SNAPSHOT-latest.jar\"}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "servers": [
+            {
+              "url": "https://192.168.1.100:2096"
+            }
+          ]
+        },
+        "servers": [
+          {
+            "url": "https://192.168.1.100:2096"
+          }
+        ]
+      }
+    },
+    "components": {
+      "schemas": {
+        "inline_response_200": {
+          "type": "object",
+          "properties": {
+            "isDevBuild": {
+              "type": "boolean"
+            },
+            "youAreAwesome": {
+              "type": "boolean"
+            },
+            "mcssApiVersion": {
+              "type": "string"
+            },
+            "mcssVersion": {
+              "type": "string"
+            },
+            "uniqueIdentifier": {
+              "type": "string"
+            }
+          }
+        },
+        "inline_response_200_1": {
+          "type": "object",
+          "properties": {
+            "latest": {
+              "type": "object",
+              "properties": {
+                "playersOnline": {
+                  "type": "integer"
+                },
+                "cpu": {
+                  "type": "integer"
+                },
+                "memoryLimit": {
+                  "type": "integer"
+                },
+                "memoryUsed": {
+                  "type": "integer"
+                },
+                "playerLimit": {
+                  "type": "integer"
+                },
+                "startDate": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        },
+        "inline_response_200_2": {
+          "type": "object",
+          "properties": {
+            "pathToFolder": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "guid": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "keepOnline": {
+              "type": "integer"
+            },
+            "folderName": {
+              "type": "string"
+            },
+            "javaAllocatedMemory": {
+              "type": "integer"
+            },
+            "creationDate": {
+              "type": "string"
+            },
+            "isSetToAutoStart": {
+              "type": "boolean"
+            },
+            "javaStartupLine": {
+              "type": "string"
+            },
+            "status": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  }
