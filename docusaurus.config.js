@@ -6,22 +6,16 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'MC Server Soft API Documentation',
+  tagline: 'Official API Docs for MC Server Soft',
+  url: 'https://mcserversoft.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
+  organizationName: 'mcserversoft',
+  projectName: 'ApiDocumentation',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'mcserversoft', // Usually your GitHub org/user name.
-  projectName: 'ApiDocumentation', // Usually your repo name.
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -31,93 +25,56 @@ const config = {
     // .. Your other presets' config 
     '@docusaurus/preset-classic',
     // Redocusaurus config
-   [
-     'redocusaurus',
-     {
-       // Plugin Options for loading OpenAPI files
-       specs: [
-         {
-           spec: 'static/openapi.json',
-           route: '/api/',
-         },
-       ],
-       // Theme Options for modifying how redoc renders them
-       theme: {
-         // Change with your site colors
-         primaryColor: '#1890ff',
-       },
-     },
-   ],
- ],
+    [
+      'redocusaurus',
+      {
+        specs: [
+          {
+            spec: 'static/openapi.json',
+            route: '/',
+          },
+        ],
+        theme: {
+          primaryColor: '#1890ff',
+        },
+      },
+    ],
+  ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [{ name: 'keywords', content: 'mcserversoft, documentation, mcss, docs, api, software, developer, remote access, bot' }],
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
+      },
+      image: 'img/logo.svg',
+      // algolia: {
+      //   appId: '',
+      //   // Public API key: it is safe to commit it
+      //   apiKey: '',
+      //   indexName: '',
+      // },
       navbar: {
-        title: 'My Site',
+        title: 'MC Server Soft API Documentation',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Logo of MC Server Soft',
           src: 'img/logo.svg',
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/mcserversoft/ApiDocumentation',
             label: 'GitHub',
             position: 'right',
-          },
+          }
         ],
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        links: [],
+        copyright: `Copyright © ${new Date().getFullYear()} MC Server Soft and contributors.`,
       },
       prism: {
         theme: lightCodeTheme,
