@@ -61,7 +61,7 @@ const config = {
         title: 'MC Server Soft API Documentation',
         logo: {
           alt: 'Logo of MC Server Soft',
-          src: 'img/logo.svg',
+          src: 'logo.svg',
         },
         items: [
           {
