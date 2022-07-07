@@ -36,6 +36,22 @@ const config = {
         ],
         theme: {
           primaryColor: '#abd037',
+          options: {
+            //if algolia works then we can disable the default search
+            //disableSearch: true,
+            hideDownloadButton: true,
+            scrollYOffset: 60,
+            hideLoading: true,
+          },
+          theme: {
+            rightPanel: {
+              backgroundColor: '#121212',
+            },
+            fab: {
+              backgroundColor: '#abd037',
+              color: '#ffffff'
+            }
+          },
         }
       },
     ],
