@@ -147,7 +147,7 @@ paths:
           content:
             text/plain:
               example: null
-  /api/v1/servers/e0ae4902-10ed-481f-aed0-fa1170ec779a:
+  /api/v1/servers/:serverId:
     get:
       tags:
         - Server
@@ -198,7 +198,7 @@ paths:
           content:
             text/plain:
               example: null
-  /api/v1/servers/e0ae4902-10ed-481f-aed0-fa1170ec779a/stats:
+  /api/v1/servers/:serverId/stats:
     get:
       tags:
         - Server
@@ -227,7 +227,7 @@ paths:
           content:
             text/plain:
               example: null
-  /api/v1/servers/3054aac3-dbf5-4e10-94d2-f4b83577d9b4/icon:
+  /api/v1/servers/:serverId/icon:
     get:
       tags:
         - Server
@@ -249,7 +249,7 @@ paths:
           content:
             text/plain:
               example: null
-  /api/v1/servers/e0ae4902-10ed-481f-aed0-fa1170ec779a/execute/action:
+  /api/v1/servers/:serverId/execute/action:
     post:
       tags:
         - Server
@@ -286,7 +286,7 @@ paths:
           content:
             text/plain:
               example: null
-  /api/v1/servers/e0ae4902-10ed-481f-aed0-fa1170ec779a/execute/command:
+  /api/v1/servers/:serverId/execute/command:
     post:
       tags:
         - Server
@@ -319,7 +319,7 @@ paths:
           content:
             text/plain:
               example: null
-  /api/v1/servers/e0ae4902-10ed-481f-aed0-fa1170ec779a/execute/commands:
+  /api/v1/servers/:serverId/execute/commands:
     post:
       tags:
         - Server
@@ -355,7 +355,7 @@ paths:
           content:
             text/plain:
               example: null
-  /api/v1/servers/3054aac3-dbf5-4e10-94d2-f4b83577d9b4/console:
+  /api/v1/servers/:serverId/console:
     get:
       tags:
         - Console
@@ -420,7 +420,7 @@ paths:
           content:
             text/plain:
               example: null
-  /api/v1/servers/e0ae4902-10ed-481f-aed0-fa1170ec779a/console/outdated:
+  /api/v1/servers/:serverId/console/outdated:
     get:
       tags:
         - Console
@@ -466,7 +466,7 @@ paths:
           content:
             text/plain:
               example: null
-  /api/v1/servers/e0ae4902-10ed-481f-aed0-fa1170ec779a/scheduler:
+  /api/v1/servers/:serverId/scheduler:
     get:
       tags:
         - Scheduler
@@ -492,7 +492,7 @@ paths:
           content:
             text/plain:
               example: null
-  /api/v1/servers/e0ae4902-10ed-481f-aed0-fa1170ec779a/scheduler/tasks:
+  /api/v1/servers/:serverId/scheduler/tasks:
     get:
       tags:
         - Scheduler
@@ -617,7 +617,7 @@ paths:
           content:
             text/plain:
               example: null
-  /api/v1/servers/e0ae4902-10ed-481f-aed0-fa1170ec779a/scheduler/tasks/4a582b48-5f37-4586-88f9-a37af96db08a:
+  /api/v1/servers/:serverId/scheduler/tasks/:taskId:
     get:
       tags:
         - Scheduler
@@ -701,7 +701,6 @@ paths:
           content:
             text/plain:
               example: null
-  /api/v1/servers/e0ae4902-10ed-481f-aed0-fa1170ec779a/scheduler/tasks/e9aa8fb2-303c-41ec-b3a0-cd9252a2e19f:
     delete:
       tags:
         - Scheduler
@@ -723,7 +722,6 @@ paths:
           content:
             text/plain:
               example: null
-  /api/v1/servers/e0ae4902-10ed-481f-aed0-fa1170ec779a/scheduler/tasks/8fcab652-cb96-4c57-b12b-f1d0db694a2b:
     post:
       tags:
         - Scheduler
