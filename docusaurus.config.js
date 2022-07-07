@@ -30,7 +30,7 @@ const config = {
       {
         specs: [
           {
-            spec: 'static/openapi.json',
+            spec: 'static/openapi.yml',
             route: '/',
           },
         ],
