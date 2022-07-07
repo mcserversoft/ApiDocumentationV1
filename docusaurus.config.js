@@ -12,7 +12,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: '/favicon.ico',
   organizationName: 'mcserversoft',
   projectName: 'ApiDocumentation',
 
@@ -35,8 +35,8 @@ const config = {
           },
         ],
         theme: {
-          primaryColor: '#1890ff',
-        },
+          primaryColor: '#abd037',
+        }
       },
     ],
   ],
@@ -50,7 +50,7 @@ const config = {
         disableSwitch: false,
         respectPrefersColorScheme: false,
       },
-      image: 'img/logo.svg',
+      image: '/logo.svg',
       // algolia: {
       //   appId: '',
       //   // Public API key: it is safe to commit it
