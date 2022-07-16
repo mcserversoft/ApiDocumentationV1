@@ -237,7 +237,7 @@ paths:
         '200':
           description: OK
           content:
-            application/json:
+            image/png:
               example: {}
         '401':
           description: Unauthorized
