@@ -61,7 +61,7 @@ components:
             - None
             - Elevated
             - Aggressive
-          example: false
+          example: 0
         javaAllocatedMemory:
           type: int
           example: 1025
