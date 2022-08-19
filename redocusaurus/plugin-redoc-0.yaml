@@ -21,6 +21,64 @@ components:
     apikeyAuth:
       type: http
       scheme: apikey
+  schemas:
+    ServerDetails:
+      type: object
+      properties:
+        guid:
+          type: string
+          example: e0ae4902-10ed-481f-aed0-fa1170ec779a
+        status:
+          type: int
+          enum:
+            - Offline
+            - Online
+            - Restarting
+            - Starting
+            - Stopping
+          example: 0
+        name:
+          type: string
+          example: My Precious Server
+        description:
+          type: string
+          example: Pvp & Minigames
+        pathToFolder:
+          type: string
+          example: P:\path\to\mcss\servers\Purpur\
+        folderName:
+          type: string
+          example: Purpur
+        creationDate:
+          type: date
+          example: '2021-12-12T12:09:02.820296+01:00'
+        isSetToAutoStart:
+          type: bool
+          example: false
+        keepOnline:
+          type: int
+          enum:
+            - None
+            - Elevated
+            - Aggressive
+          example: false
+        javaAllocatedMemory:
+          type: int
+          example: 1025
+        javaStartupLine:
+          type: string
+          example: >-
+            java -Xms1G -Xmx1G -XX:+UseG1GC -XX:+ParallelRefProcEnabled
+            -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions
+            -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1HeapWastePercent=5
+            -XX:G1MixedGCCountTarget=4 -XX:G1MixedGCLiveThresholdPercent=90
+            -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32
+            -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1
+            -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40
+            -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20
+            -XX:InitiatingHeapOccupancyPercent=15
+            -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true
+            -jar paper.jar nogui
 security:
   - apikeyAuth: []
 tags:
@@ -80,29 +138,10 @@ paths:
           description: OK
           content:
             application/json:
-              example:
-                - guid: 69361e31-2ac8-43b5-9377-0cb5e40e75ac
-                  status: 0
-                  name: Server Pool
-                  description: Your Minecraft, your way
-                  pathToFolder: P:\path\to\mcss\servers\Purpur\
-                  folderName: Purpur
-                  creationDate: '2022-07-05T15:56:21.0991114+02:00'
-                  isSetToAutoStart: false
-                  keepOnline: 0
-                  javaAllocatedMemory: 1024
-                  javaStartupLine: java -Xms256M -Xmx[RAM]M -jar [SERVERTYPE.NAME].jar
-                - guid: bd03d993-e052-4196-bf04-bdc3754efc3d
-                  status: 0
-                  name: My Bungee Network
-                  description: Jump jump
-                  pathToFolder: P:\path\to\mcss\servers\bungee\
-                  folderName: bungee
-                  creationDate: '2021-11-19T20:24:02.3105235+01:00'
-                  isSetToAutoStart: false
-                  keepOnline: 0
-                  javaAllocatedMemory: 2048
-                  javaStartupLine: java -Xms256M -Xmx[RAM]M -jar [SERVERTYPE.NAME].jar
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ServerDetails'
         '401':
           description: Unauthorized
           content:
@@ -164,30 +203,8 @@ paths:
           description: OK
           content:
             application/json:
-              example:
-                guid: e0ae4902-10ed-481f-aed0-fa1170ec779a
-                status: 0
-                name: Server Pool
-                description: Pvp & Minigames
-                pathToFolder: P:\path\to\mcss\servers\Purpur\
-                folderName: Purpur
-                creationDate: '2021-12-12T12:09:02.820296+01:00'
-                isSetToAutoStart: false
-                keepOnline: 0
-                javaAllocatedMemory: 1025
-                javaStartupLine: >-
-                  java -Xms1G -Xmx1G -XX:+UseG1GC -XX:+ParallelRefProcEnabled
-                  -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions
-                  -XX:+DisableExplicitGC -XX:+AlwaysPreTouch
-                  -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4
-                  -XX:G1MixedGCLiveThresholdPercent=90
-                  -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32
-                  -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1
-                  -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40
-                  -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20
-                  -XX:InitiatingHeapOccupancyPercent=15
-                  -Dusing.aikars.flags=https://mcflags.emc.gs
-                  -Daikars.new.flags=true -jar paper.jar nogui
+              schema:
+                $ref: '#/components/schemas/ServerDetails'
         '401':
           description: Unauthorized
           content:
