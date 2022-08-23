@@ -532,7 +532,7 @@ paths:
                   name: 1min restart announcement
                   enabled: false
                   timing:
-                    timeSpan: '18:59:00'
+                    time: '18:59:00'
                     repeat: true
                   job:
                     commands:
@@ -571,7 +571,7 @@ paths:
 
         **fixedTime**  
         \- repeat: boolean  
-        \- timeSpan: TimeSpan
+        \- time: TimeSpan
 
         **interval**  
         \- repeat: boolean  
