@@ -795,8 +795,15 @@ paths:
         **task (required)**  
         \- name (required) : string  
         \- enabled (optional) : boolean  
+        \- playerRequirement (optional) : object  
         \- timing (required) : object  
         \- job (required): object
+
+        ### PlayerRequirement **Object**
+
+        \- none (default)  
+        \- empty  
+        \- atLeastOne
 
         ### **Timing Object**
 
@@ -926,17 +933,51 @@ paths:
       tags:
         - Scheduler
       summary: Edit task
-      description: >-
-        Update a specific server task.  
+      description: |-
+        Update a specific server task.
 
-        You can not change the timing or job of the original task, only its
-        values.
-
+        > You can not change the timing or job object, only its values!
 
         **task (required)**  
+        \- name (optional) : string  
+        \- enabled (optional) : boolean  
+        \- playerRequirement (optional) : object  
+        \- timing (optional) : object  
+        \- job (optional): object
 
-        *Detailed parameter declaration can be found in the* ***Create Task***
-        *route.*
+        ### PlayerRequirement **Object**
+
+        \- none (default)  
+        \- empty  
+        \- atLeastOne
+
+        ### **Timing Object**
+
+        **fixedTime**  
+        \- repeat: boolean  
+        \- timeSpan: TimeSpan
+
+        **interval**  
+        \- repeat: boolean  
+        \- interval: integer
+
+        **timeless**  
+        // no parameters
+
+        ### **Job Object**
+
+        **ServerAction**  
+        \- action : ServerAction  
+        // 0 or Stop  
+        // 1 or Start  
+        // 2 or Kill  
+        // 3 or Restart
+
+        **RunCommands**  
+        \- commands: string\[\]
+
+        **StartBackup**  
+        \- backupIdentifier: guid
       requestBody:
         content:
           application/json:
@@ -1215,14 +1256,12 @@ paths:
         - Backups
       summary: Edit backup
       description: |-
-        StartFragment
-
         Update a specific server backup.
 
         **backup (required)**  
         \- name (optional) : string  
         \- destination (optional) : string  
-        \- suspend(optional) : boolean  
+        \- suspend (optional) : boolean  
         \- deleteOldBackups (optional) : boolean  
         \- compression (optional) : object  
         \- runBackupAfterCreation (optional): boolean  
