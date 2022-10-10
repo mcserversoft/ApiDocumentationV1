@@ -989,6 +989,7 @@ paths:
               example:
                 name: Start
                 enabled: false
+                playerRequirement: 1
                 timing:
                   repeat: false
                   interval: 151
