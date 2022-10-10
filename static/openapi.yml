@@ -842,6 +842,7 @@ paths:
               example:
                 name: Made with the api s
                 enabled: true
+                playerRequirement: 0
                 timing:
                   repeat: true
                   interval: 150
