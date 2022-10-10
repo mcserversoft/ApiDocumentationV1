@@ -751,6 +751,7 @@ paths:
                   guidOfServer: e0ae4902-10ed-481f-aed0-fa1170ec779a
                   name: 1min restart announcement
                   enabled: false
+                  playerRequirement: 0
                   timing:
                     timeSpan: '18:59:00'
                     repeat: true
@@ -761,6 +762,7 @@ paths:
                   guidOfServer: e0ae4902-10ed-481f-aed0-fa1170ec779a
                   name: Timeless
                   enabled: true
+                  playerRequirement: 0
                   timing: {}
                   job:
                     action: 1
@@ -900,6 +902,7 @@ paths:
                 guidOfServer: e0ae4902-10ed-481f-aed0-fa1170ec779a
                 name: Made with the api2
                 enabled: false
+                playerRequirement: 0
                 timing:
                   repeat: false
                   interval: 151
