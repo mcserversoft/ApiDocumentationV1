@@ -952,8 +952,8 @@ paths:
         ### PlayerRequirement **Object**
 
         \- 0 none (default)  
-        \- 0 empty  
-        \- 0 atLeastOne
+        \- 1 empty  
+        \- 2 atLeastOne
 
         ### **Timing Object**
 
