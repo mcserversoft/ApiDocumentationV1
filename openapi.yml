@@ -12,7 +12,7 @@ info:
 
 
     `Enabling SSL is recommended even when the certificate is self signed!`
-  version: API_1.2.0
+  version: API_1.2.1
 servers:
   - url: https://localhost:25560
     description: Your local MCSS API server
@@ -97,6 +97,7 @@ paths:
                   folderName: Purpur
                   creationDate: '2022-07-05T15:56:21.0991114+02:00'
                   isSetToAutoStart: false
+                  forceSaveOnStop: false
                   keepOnline: 0
                   javaAllocatedMemory: 1024
                   javaStartupLine: java -Xms256M -Xmx[RAM]M -jar [SERVERTYPE.NAME].jar
@@ -108,6 +109,7 @@ paths:
                   folderName: bungee
                   creationDate: '2021-11-19T20:24:02.3105235+01:00'
                   isSetToAutoStart: false
+                  forceSaveOnStop: false
                   keepOnline: 0
                   javaAllocatedMemory: 2048
                   javaStartupLine: java -Xms256M -Xmx[RAM]M -jar [SERVERTYPE.NAME].jar
@@ -231,6 +233,7 @@ paths:
                 folderName: Purpur
                 creationDate: '2021-12-12T12:09:02.820296+01:00'
                 isSetToAutoStart: false
+                forceSaveOnStop: false
                 keepOnline: 0
                 javaAllocatedMemory: 1025
                 javaStartupLine: >-
@@ -278,10 +281,10 @@ paths:
         **server (required)**  
         \- name (optional) : string  
         \- description (optional) : string  
-        \- autoStartWithMcss (optional) : boolean  
+        \- isSetToAutoStart (optional) : boolean  
         \- forceSaveOnStop (optional) : boolean  
-        \- allocatedMemoryInMegabytes (optional) : int  
-        \- keepOnline (optional) : object  
+        \- javaAllocatedMemory (optional) : int  
+        \- keepOnline (optional) : object
 
         ### KeepOnline Object
 
@@ -377,6 +380,8 @@ paths:
           description: OK
           content:
             image/png:
+              schema:
+                type: object
               example: {}
         '401':
           description: Unauthorized
@@ -1120,22 +1125,21 @@ paths:
               schema:
                 type: object
               example:
-                backupId: "eccd9909-8ec4-4bb5-9eda-6e7b4236c8b6"
-                name: "test"
-                destination: "C:\\Users\\User\\Desktop\\mcss\\backups"
-                suspend: false
-                deleteOldBackups: true
-                comprssion: 0
-                lastStatus: 0
-                completedAt: "0001-01-01T00:00:00"
-                fileBlacklist: 
-                  - myfile.json
-                  - eula.txt
-                  - start.sh
-                folderBlacklist:
-                  - crash-reports
-                  - logs
-                  
+                - backupId: eccd9909-8ec4-4bb5-9eda-6e7b4236c8b6
+                  name: Backup test
+                  destination: C:\Users\User\Desktop\mcss\backups
+                  suspend: false
+                  deleteOldBackups: true
+                  compression: 0
+                  lastStatus: 0
+                  completedAt: '0001-01-01T00:00:00'
+                  fileBlacklist:
+                    - myfile.json
+                    - eula.txt
+                    - start.sh
+                  folderBlacklist:
+                    - crash-reports
+                    - logs
         '401':
           description: Unauthorized
           content:
@@ -1234,7 +1238,22 @@ paths:
       tags:
         - Backups
       summary: Get backup details
-      description: Return a specific backup from a specific server.
+      description: |-
+        Return a specific backup from a specific server.
+
+        ### Compression **Object**
+
+        \- 0 high (default)  
+        \- 1 low  
+        \- 2 none
+
+        ### LastStatus **Object**
+
+        \- 0 neverRun (default)  
+        \- 1 inProgress,  
+        \- 2 completed,  
+        \- 3 failed,  
+        \- 4 canceled
       responses:
         '200':
           description: OK
@@ -1243,21 +1262,16 @@ paths:
               schema:
                 type: object
               example:
-                backupId: "eccd9909-8ec4-4bb5-9eda-6e7b4236c8b6"
-                name: "test"
-                destination: "C:\\Users\\User\\Desktop\\mcss\\backups"
+                backupId: fd96b615-6158-4313-85e0-d488f2616ed2
+                name: 1/220
+                destination: H:\backups
                 suspend: false
-                deleteOldBackups: true
-                comprssion: 0
+                deleteOldBackups: false
+                compression: 1
                 lastStatus: 0
-                completedAt: "0001-01-01T00:00:00"
-                fileBlacklist: 
-                  - myfile.json
-                  - eula.txt
-                  - start.sh
-                folderBlacklist:
-                  - crash-reports
-                  - logs
+                completedAt: '0001-01-01T00:00:00'
+                fileBlacklist: []
+                folderBlacklist: []
         '401':
           description: Unauthorized
           content:
