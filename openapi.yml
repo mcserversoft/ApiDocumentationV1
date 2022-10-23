@@ -803,9 +803,9 @@ paths:
 
         ### PlayerRequirement **Object**
 
-        \- none (default)  
-        \- empty  
-        \- atLeastOne
+        \- 0 none (default)  
+        \- 1 empty  
+        \- 2 atLeastOne
 
         ### **Timing Object**
 
@@ -951,9 +951,9 @@ paths:
 
         ### PlayerRequirement **Object**
 
-        \- none (default)  
-        \- empty  
-        \- atLeastOne
+        \- 0 none (default)  
+        \- 1 empty  
+        \- 2 atLeastOne
 
         ### **Timing Object**
 
@@ -1120,10 +1120,22 @@ paths:
               schema:
                 type: object
               example:
-                tasks: 8
-                interval: 4
-                fixedTime: 3
-                timeless: 1
+                backupId: "eccd9909-8ec4-4bb5-9eda-6e7b4236c8b6"
+                name: "test"
+                destination: "C:\\Users\\User\\Desktop\\mcss\\backups"
+                suspend: false
+                deleteOldBackups: true
+                comprssion: 0
+                lastStatus: 0
+                completedAt: "0001-01-01T00:00:00"
+                fileBlacklist: 
+                  - myfile.json
+                  - eula.txt
+                  - start.sh
+                folderBlacklist:
+                  - crash-reports
+                  - logs
+                  
         '401':
           description: Unauthorized
           content:
@@ -1231,10 +1243,21 @@ paths:
               schema:
                 type: object
               example:
-                tasks: 8
-                interval: 4
-                fixedTime: 3
-                timeless: 1
+                backupId: "eccd9909-8ec4-4bb5-9eda-6e7b4236c8b6"
+                name: "test"
+                destination: "C:\\Users\\User\\Desktop\\mcss\\backups"
+                suspend: false
+                deleteOldBackups: true
+                comprssion: 0
+                lastStatus: 0
+                completedAt: "0001-01-01T00:00:00"
+                fileBlacklist: 
+                  - myfile.json
+                  - eula.txt
+                  - start.sh
+                folderBlacklist:
+                  - crash-reports
+                  - logs
         '401':
           description: Unauthorized
           content:
