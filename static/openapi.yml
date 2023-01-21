@@ -12,17 +12,20 @@ info:
 
 
     `Enabling SSL is recommended even when the certificate is self signed!`
+
+
+    Your API key must be attached as a header with the key `apiKey` and the value as your API key for all endpoints that required authorization.
   version: API_1.2.1
 servers:
   - url: https://localhost:25560
     description: Your local MCSS API server
 components:
   securitySchemes:
-    apikeyAuth:
+    apiKey:
       type: http
-      scheme: apikey
+      scheme: apiKey
 security:
-  - apikeyAuth: []
+  - apiKey: []
 tags:
   - name: General
     description: General API calls that interact with mcss directly.
