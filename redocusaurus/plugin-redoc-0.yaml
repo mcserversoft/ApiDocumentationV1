@@ -95,6 +95,7 @@ paths:
                   description: Your Minecraft, your way
                   pathToFolder: P:\path\to\mcss\servers\Purpur\
                   folderName: Purpur
+                  Type: Purpur
                   creationDate: '2022-07-05T15:56:21.0991114+02:00'
                   isSetToAutoStart: false
                   forceSaveOnStop: false
@@ -107,6 +108,7 @@ paths:
                   description: Jump jump
                   pathToFolder: P:\path\to\mcss\servers\bungee\
                   folderName: bungee
+                  Type: BungeeCord
                   creationDate: '2021-11-19T20:24:02.3105235+01:00'
                   isSetToAutoStart: false
                   forceSaveOnStop: false
@@ -231,6 +233,7 @@ paths:
                 description: Pvp & Minigames
                 pathToFolder: P:\path\to\mcss\servers\Purpur\
                 folderName: Purpur
+                Type: Purpur
                 creationDate: '2021-12-12T12:09:02.820296+01:00'
                 isSetToAutoStart: false
                 forceSaveOnStop: false
