@@ -81,6 +81,20 @@ const config = {
         },
         items: [
           {
+            label: 'v1',
+            position: 'right',
+            items: [
+              {
+                label: 'v2',
+                href: 'https://apidocs.mcserversoft.com',
+              },
+              {
+                label: 'v1',
+                href: 'https://apidocs-v1.mcserversoft.com',
+              }
+            ],
+          },
+          {
             href: 'https://github.com/mcserversoft/ApiDocumentation',
             label: 'GitHub',
             position: 'right',
