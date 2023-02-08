@@ -4,10 +4,18 @@ info:
   description: >-
     Documentation for the official MC Server Soft API.
 
+    This for MCSS v13 - v13.4.  
 
-    This for MCSS v13 and higher.  
 
-    The API used in V12 can be found at
+    Other versions:
+
+
+    - The API used in v13 - v13.4 can be found at
+    [https://apidocs-v1.mcserversoft.com](https://apidocs-v1.mcserversoft.com)  
+        Note that v1 is still included in the latest version of mcss, but it's recommended that you use or migrate to v2.
+        
+
+    - The API used in V12 can be found at
     [https://documenter.getpostman.com/view/7749159/TzJsexSC](https://documenter.getpostman.com/view/7749159/TzJsexSC)
 
 
@@ -44,7 +52,7 @@ paths:
       summary: Get API version
       description: Get version info about mcss.
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -56,7 +64,7 @@ paths:
                 mcssApiVersion: 1.0.0
                 uniqueIdentifier: 3664ac4e-23a5-4877-ab75-8412884acdb7
                 youAreAwesome: true
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
@@ -82,7 +90,7 @@ paths:
             type: string
           example: None
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -96,7 +104,7 @@ paths:
                   pathToFolder: P:\path\to\mcss\servers\Purpur\
                   folderName: Purpur
                   type: Purpur
-                  creationDate: '2022-07-05T15:56:21.0991114+02:00'
+                  creationDate: "2022-07-05T15:56:21.0991114+02:00"
                   isSetToAutoStart: false
                   forceSaveOnStop: false
                   keepOnline: 0
@@ -109,20 +117,20 @@ paths:
                   pathToFolder: P:\path\to\mcss\servers\bungee\
                   folderName: bungee
                   type: BungeeCord
-                  creationDate: '2021-11-19T20:24:02.3105235+01:00'
+                  creationDate: "2021-11-19T20:24:02.3105235+01:00"
                   isSetToAutoStart: false
                   forceSaveOnStop: false
                   keepOnline: 0
                   javaAllocatedMemory: 2048
                   javaStartupLine: java -Xms256M -Xmx[RAM]M -jar [SERVERTYPE.NAME].jar
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             application/json:
@@ -135,7 +143,7 @@ paths:
                   description: Your Minecraft, your way
                   pathToFolder: P:\path\to\mcss\servers\Purpur\
                   folderName: Purpur
-                  creationDate: '2022-07-05T15:56:21.0991114+02:00'
+                  creationDate: "2022-07-05T15:56:21.0991114+02:00"
                   isSetToAutoStart: false
                   keepOnline: 0
                   javaAllocatedMemory: 1024
@@ -146,7 +154,7 @@ paths:
                   description: Jump jump
                   pathToFolder: P:\path\to\mcss\servers\bungee\
                   folderName: bungee
-                  creationDate: '2021-11-19T20:24:02.3105235+01:00'
+                  creationDate: "2021-11-19T20:24:02.3105235+01:00"
                   isSetToAutoStart: false
                   keepOnline: 0
                   javaAllocatedMemory: 2048
@@ -179,7 +187,7 @@ paths:
             type: string
           example: f738fb40-223e-4010-bd07-af4caabdf3dd
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -187,14 +195,14 @@ paths:
                 type: object
               example:
                 count: 5
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
@@ -220,7 +228,7 @@ paths:
             type: string
           example: Minimal
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -234,7 +242,7 @@ paths:
                 pathToFolder: P:\path\to\mcss\servers\Purpur\
                 folderName: Purpur
                 type: Purpur
-                creationDate: '2021-12-12T12:09:02.820296+01:00'
+                creationDate: "2021-12-12T12:09:02.820296+01:00"
                 isSetToAutoStart: false
                 forceSaveOnStop: false
                 keepOnline: 0
@@ -252,21 +260,21 @@ paths:
                   -XX:InitiatingHeapOccupancyPercent=15
                   -Dusing.aikars.flags=https://mcflags.emc.gs
                   -Daikars.new.flags=true -jar paper.jar nogui
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Guid
           content:
             text/plain:
@@ -302,28 +310,28 @@ paths:
               example:
                 KeepOnline: Elevated
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
                 type: object
               example: {}
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Guid
           content:
             text/plain:
@@ -337,7 +345,7 @@ paths:
       summary: Get server stats
       description: Return stats of a specific server.
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -351,21 +359,21 @@ paths:
                   playersOnline: 0
                   playerLimit: 21
                   startDate: 0
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Guid
           content:
             text/plain:
@@ -379,28 +387,28 @@ paths:
       summary: Get server icon
       description: Return the server-icon.png of a specific server.
       responses:
-        '200':
+        "200":
           description: OK
           content:
             image/png:
               schema:
                 type: object
               example: {}
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Guid
           content:
             text/plain:
@@ -429,28 +437,28 @@ paths:
               example:
                 action: 1
       responses:
-        '200':
+        "200":
           description: OK
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Guid
           content:
             text/plain:
@@ -475,28 +483,28 @@ paths:
               example:
                 command: say My name’s not Kirk..It’s Skywalker. Luke Skywalker.
       responses:
-        '200':
+        "200":
           description: OK
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Guid
           content:
             text/plain:
@@ -524,28 +532,28 @@ paths:
                   - say Qui
                   - say C'est moi
       responses:
-        '200':
+        "200":
           description: OK
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Guid
           content:
             text/plain:
@@ -573,19 +581,19 @@ paths:
           in: query
           schema:
             type: integer
-          example: '5'
+          example: "5"
         - name: Reversed
           in: query
           schema:
             type: boolean
-          example: 'true'
+          example: "true"
         - name: takeFromBeginning
           in: query
           schema:
             type: boolean
-          example: 'true'
+          example: "true"
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -609,21 +617,21 @@ paths:
                 - >-
                   [21:24:12] [Server thread/INFO]: [CraftBook] 1875 chunk(s) for
                   3 world(s) processed (109ms elapsed)
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Guid
           content:
             text/plain:
@@ -653,14 +661,14 @@ paths:
           in: query
           schema:
             type: string
-          example: '[19:25:31] [Server thread/INFO]: Closing Thread Pool'
+          example: "[19:25:31] [Server thread/INFO]: Closing Thread Pool"
         - name: lastLine
           in: query
           schema:
             type: string
-          example: '[19:25:31] [Server thread/INFO]: Closing Server'
+          example: "[19:25:31] [Server thread/INFO]: Closing Server"
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -668,21 +676,21 @@ paths:
                 type: object
               example:
                 isOutdated: false
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Guid
           content:
             text/plain:
@@ -696,7 +704,7 @@ paths:
       summary: Get scheduler details
       description: Return basic info about the scheduler of a specific server.
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -707,21 +715,21 @@ paths:
                 interval: 4
                 fixedTime: 3
                 timeless: 1
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Guid
           content:
             text/plain:
@@ -748,7 +756,7 @@ paths:
             type: string
           example: None
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -761,7 +769,7 @@ paths:
                   enabled: false
                   playerRequirement: 0
                   timing:
-                    timeSpan: '18:59:00'
+                    timeSpan: "18:59:00"
                     repeat: true
                   job:
                     commands:
@@ -774,21 +782,21 @@ paths:
                   timing: {}
                   job:
                     action: 1
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Guid
           content:
             text/plain:
@@ -858,49 +866,49 @@ paths:
                   commands:
                     - /say hello from the api
       responses:
-        '201':
+        "201":
           description: Created
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '400':
+        "400":
           description: Invalid Task Details
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Guid
           content:
             text/plain:
               schema:
                 type: string
               example: null
-  /api/v1/servers/e0ae4902-10ed-481f-aed0-fa1170ec779a/scheduler/tasks/4a582b48-5f37-4586-88f9-a37af96db08a:
-    get:
+  ? /api/v1/servers/e0ae4902-10ed-481f-aed0-fa1170ec779a/scheduler/tasks/4a582b48-5f37-4586-88f9-a37af96db08a
+  : get:
       tags:
         - Scheduler
       summary: Get task
       description: Return a specific task from a specific server.
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -919,29 +927,29 @@ paths:
                   commands:
                     - /say hello from the api2
                     - /say hello from the api3
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Guid
           content:
             text/plain:
               schema:
                 type: string
               example: null
-  /api/v1/servers/e0ae4902-10ed-481f-aed0-fa1170ec779a/scheduler/tasks/26d30ef2-4e17-4c66-941b-07858601a100:
-    put:
+  ? /api/v1/servers/e0ae4902-10ed-481f-aed0-fa1170ec779a/scheduler/tasks/26d30ef2-4e17-4c66-941b-07858601a100
+  : put:
       tags:
         - Scheduler
       summary: Edit task
@@ -1007,78 +1015,78 @@ paths:
                     - /say hello from the api2
                     - /say hello from the api3
       responses:
-        '200':
+        "200":
           description: OK
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Guid/Task
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '409':
+        "409":
           description: Timming type can not be changed.
           content:
             text/plain:
               schema:
                 type: string
               example: null
-  /api/v1/servers/e0ae4902-10ed-481f-aed0-fa1170ec779a/scheduler/tasks/e9aa8fb2-303c-41ec-b3a0-cd9252a2e19f:
-    delete:
+  ? /api/v1/servers/e0ae4902-10ed-481f-aed0-fa1170ec779a/scheduler/tasks/e9aa8fb2-303c-41ec-b3a0-cd9252a2e19f
+  : delete:
       tags:
         - Scheduler
       summary: Delete task
       description: Delete a specific server task.
       responses:
-        '200':
+        "200":
           description: Deleted
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Task
           content:
             text/plain:
               schema:
                 type: string
               example: null
-  /api/v1/servers/e0ae4902-10ed-481f-aed0-fa1170ec779a/scheduler/tasks/8fcab652-cb96-4c57-b12b-f1d0db694a2b:
-    post:
+  ? /api/v1/servers/e0ae4902-10ed-481f-aed0-fa1170ec779a/scheduler/tasks/8fcab652-cb96-4c57-b12b-f1d0db694a2b
+  : post:
       tags:
         - Scheduler
       summary: Run task
@@ -1086,28 +1094,28 @@ paths:
       requestBody:
         content: {}
       responses:
-        '200':
+        "200":
           description: OK
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Guid/Task
           content:
             text/plain:
@@ -1121,7 +1129,7 @@ paths:
       summary: Get list of backups
       description: Return all backups from a specific server
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -1135,7 +1143,7 @@ paths:
                   deleteOldBackups: true
                   compression: 0
                   lastStatus: 0
-                  completedAt: '0001-01-01T00:00:00'
+                  completedAt: "0001-01-01T00:00:00"
                   fileBlacklist:
                     - myfile.json
                     - eula.txt
@@ -1143,21 +1151,21 @@ paths:
                   folderBlacklist:
                     - crash-reports
                     - logs
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Guid
           content:
             text/plain:
@@ -1201,43 +1209,43 @@ paths:
                 fileBlacklist: []
                 folderBlacklist: []
       responses:
-        '201':
+        "201":
           description: Created
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '400':
+        "400":
           description: Invalid Backup
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Guid
           content:
             text/plain:
               schema:
                 type: string
               example: null
-  /api/v1/servers/e0ae4902-10ed-481f-aed0-fa1170ec779a/backups/449911ca-ff50-4052-8cf3-336b067cd482:
-    get:
+  ? /api/v1/servers/e0ae4902-10ed-481f-aed0-fa1170ec779a/backups/449911ca-ff50-4052-8cf3-336b067cd482
+  : get:
       tags:
         - Backups
       summary: Get backup details
@@ -1258,7 +1266,7 @@ paths:
         \- 3 failed,  
         \- 4 canceled
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -1272,24 +1280,24 @@ paths:
                 deleteOldBackups: false
                 compression: 1
                 lastStatus: 0
-                completedAt: '0001-01-01T00:00:00'
+                completedAt: "0001-01-01T00:00:00"
                 fileBlacklist: []
                 folderBlacklist: []
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Guid
           content:
             text/plain:
@@ -1331,28 +1339,28 @@ paths:
                 folderBlacklist:
                   - world
       responses:
-        '200':
+        "200":
           description: OK
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Guid/Backup
           content:
             text/plain:
@@ -1365,28 +1373,28 @@ paths:
       summary: Delete backup
       description: Delete a specific server backup.
       responses:
-        '200':
+        "200":
           description: Deleted
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Backup
           content:
             text/plain:
@@ -1401,28 +1409,28 @@ paths:
       requestBody:
         content: {}
       responses:
-        '200':
+        "200":
           description: OK
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '401':
+        "401":
           description: Unauthorized
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '403':
+        "403":
           description: No Server Access
           content:
             text/plain:
               schema:
                 type: string
               example: null
-        '404':
+        "404":
           description: Unknown Guid/Backup
           content:
             text/plain:
