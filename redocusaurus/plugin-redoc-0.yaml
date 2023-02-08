@@ -4,10 +4,18 @@ info:
   description: >-
     Documentation for the official MC Server Soft API.
 
+    This for MCSS v13 - v13.4.  
 
-    This for MCSS v13 and higher.  
 
-    The API used in V12 can be found at
+    Other versions:
+
+
+    - The API used in v13 - v13.4 can be found at
+    [https://apidocs-v1.mcserversoft.com](https://apidocs-v1.mcserversoft.com)  
+        Note that v1 is still included in the latest version of mcss, but it's recommended that you use or migrate to v2.
+        
+
+    - The API used in V12 can be found at
     [https://documenter.getpostman.com/view/7749159/TzJsexSC](https://documenter.getpostman.com/view/7749159/TzJsexSC)
 
 
